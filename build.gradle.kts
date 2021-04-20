@@ -18,11 +18,19 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
+    {
+        exclude(group = "org.springframework.boot", module = "spring-boot-starter-tomcat")
+    }
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 //    developmentOnly("org.springframework.boot:spring-boot-devtools")
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    //--tocmat for jdk1.6 start
+    implementation("org.apache.tomcat.embed:tomcat-embed-core:7.0.108")
+    implementation("org.apache.tomcat.embed:tomcat-embed-el:7.0.108")
+    implementation("org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.52")
+    implementation("org.apache.tomcat:tomcat-annotations-api:7.0.108")
+    //---tocmat for jdk1.6 end
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
