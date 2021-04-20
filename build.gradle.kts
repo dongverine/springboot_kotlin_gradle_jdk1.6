@@ -10,7 +10,7 @@ plugins {
 
 group = "com.dongverine"
 version = "1"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_1_6
 
 repositories {
     mavenCentral()
@@ -29,10 +29,11 @@ dependencies {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "1.8"
+        jvmTarget = "1.6"
     }
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
